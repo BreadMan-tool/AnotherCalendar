@@ -1,0 +1,68 @@
+.modal {
+    position: fixed;
+    z-index:1050;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+ .DrawModal-schedule {
+     width: 100%;
+     background-color: white;
+     position: relative;
+     box-sizing: border-box;
+     margin: 50px auto;
+     padding: 20px;
+     background: #fff;
+ }
+.close {
+  float: right;
+  font-size: 25px;
+}
+.modalContents {
+    margin: 0 auto;
+    width: 100%;
+    height: 30%;
+    position: relative;
+    padding: 0 20px 32px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.schedule-input{
+    height: 15%;
+    display: flex;
+    box-sizing: border-box;
+}
+
+input::placeholder {
+    color: #999999;
+}
+
+.DrawBtn {
+    height: 40px;
+    font-size: 14px;
+    padding: 13px 30px;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    line-height: 1px;
+    margin-top: 20px;
+    margin-bottom: 12px;
+    border-radius: 3px;
+    border-style: none;
+}
+a {
+    color: black;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.schoolId{
+    width: 250px;
+}
+.classId{
+    width: 50px;
+}

@@ -51,8 +51,8 @@ export default class ModalSchedule extends Component {
                                     <div className="schedule-input">
                                             <select name = "area" onChange={this.DrawHandler}>
                                                 <option hidden="" disabled="disabled" selected="selected" value="">지역</option>
-                                                <option value="0">수도권</option>
-                                                <option value="1">지방</option>
+                                                <option value="1">수도권</option>
+                                                <option value="0">지방</option>
                                             </select>
                                         <input
                                             name="schoolName"
@@ -66,9 +66,12 @@ export default class ModalSchedule extends Component {
                                                 <option value="0">수상한 스튜디오</option>
                                                 <option value="1">어나더랜드</option>
                                                 <option value="2">취업조작단</option>
-                                                <option value="3">수상한+코드5</option>
-                                                <option value="4">어나더+코드5</option>
-                                                <option value="5">취업+코드5</option>
+                                                <option value="3">코드5</option>
+                                                <option value="4">수상한+코드5</option>
+                                                <option value="5">어나더+코드5</option>
+                                                <option value="6">액션카드</option>
+                                                <option value="7">무인도</option>
+                                                <option value="8">기타</option>
                                             </select>
                                             <select name = "areaNumber" onChange={this.DrawHandler}>
                                                 <option hidden="" disabled="disabled" selected="selected" value="">차시</option>

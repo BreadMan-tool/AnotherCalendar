@@ -64,7 +64,7 @@ class Week extends Component {
         })
             .then(res=> {
                 [].forEach.call(res.data, function (item, index) {
-                    var str = (item.taskdate + "-" + item.tasknum);
+                    var str = (item.taskdate + "-" + item.tasknum+"-"+item.sarea);
                     var cbox = document.getElementById(str);
                     if(cbox!=null){
                         cbox.checked=true;
@@ -75,14 +75,17 @@ class Week extends Component {
 
     checkChange =({target})=>{
         var date = target.id.substr(0,10);
-        var task = target.id.substr(11,12);
+        var task = target.id.substr(11,1);
+        var area = target.id.substr(13,1);
         let data={
             uname:localStorage.getItem("username"),
             taskdate:date,
+            sarea:area,
             tasknum:task
         }
         if(data.uname!==null){
             if(target.checked){
+                console.log(data);
                 //axios.post('http://3.134.81.24:5000/api/schedule', (data))
                 axios.post('http://localhost:3000/api/schedule', (data))
             }else{
@@ -127,7 +130,7 @@ class Week extends Component {
             if(moment(dayInfo.yearMonthDayFormat).isSame(selectedDayFormat,'day')){
                 className="selected";
                     document.cookie=selectedDayFormat;
-                    console.log(document.cookie);
+                    //console.log(document.cookie);
                 if(localStorage.getItem("manager")==1){
 
                 }
@@ -142,7 +145,7 @@ class Week extends Component {
                             <div className="RCA-calendar-day-layout-1">
                                 <input type="checkbox" className="check_list" onChange={(e)=>{
                                     this.checkChange(e);
-                                }} id={`${dayInfo.yearMonthDayFormat}-0`}/> 지방 6차시
+                                }} id={`${dayInfo.yearMonthDayFormat}-6-0`}/> 지방 6차시
 
                                 {/*<input type="checkbox" className="check_list" onChange={(e)=>{*/}
                                 {/*    this.checkChange(e);*/}
@@ -152,10 +155,10 @@ class Week extends Component {
                             <div className="RCA-calendar-day-layout-2">
                                 <input type="checkbox" className="check_list" onChange={(e)=>{
                                     this.checkChange(e);
-                                }}id={`${dayInfo.yearMonthDayFormat}-2`}/> 수도권 6차시
+                                }}id={`${dayInfo.yearMonthDayFormat}-6-1`}/> 수도권 6차시
                                 <input type="checkbox" className="check_list" onChange={(e)=>{
                                     this.checkChange(e);
-                                }}id={`${dayInfo.yearMonthDayFormat}-3`}/> 수도권 4차시
+                                }}id={`${dayInfo.yearMonthDayFormat}-4-1`}/> 수도권 4차시
                             </div>
                         </div>
                     </div>
